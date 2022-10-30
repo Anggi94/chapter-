@@ -1,0 +1,278 @@
+ body {
+  width: 100%;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #000000;
+} 
+
+
+.header-nav {
+  width: 100%;
+  padding: 15px;
+  position: fixed;
+  background: #F1F3FF;
+  z-index: 99;
+}
+
+.logo {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img:hover {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar a {
+  margin: 16px;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.navbar a:hover {
+  color: #00ac11;
+  text-decoration: underline;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.top-sidebar {
+  display: none;
+}
+
+.logo-sidebar img:hover {
+  width: 40%;
+}
+
+.overlay-bg {
+  display: none;
+}
+
+.burger-icon {
+  display: none;
+}
+
+
+@media (max-width: 991px) {
+  .burger-icon {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .burger-icon img {
+    width: 40px;
+  }
+
+  .sidebar {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    width: 180px;
+    top: 0;
+    right: -180px;
+    height: 100vh;
+    padding: 0;
+    z-index: 1;
+    transition: 0.3s;
+  }
+
+  .sidebar.menu-active {
+    right: 0;
+  }
+
+  .sidebar.menu-active ::before {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+
+  .logo {
+    z-index: -1;
+  }
+
+  .overlay-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+  }
+
+  .overlay-bg.menu-active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .top-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .top-sidebar h3 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu a {
+    margin-left: 0;
+  }
+}
+
+@media (max-width:767px) {
+
+  .menu {
+    padding: 16px;
+  }
+
+  .burger-icon {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .burger-icon img {
+    width: 40px;
+  }
+
+  .sidebar {
+    position: absolute;
+    width: 180px;
+    height: 100vh;
+    top: 0;
+    right: -180px;
+    padding-top: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    transition: 0.5s;
+  }
+
+  .sidebar.navbar-active {
+    right: 0px;
+  }
+  .sidebar.menu-active ::before {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+
+  .logo {
+    z-index: -1;
+  }
+
+  .sidebar .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-sidebar {
+    display: flex;
+    align-items: center;
+    margin: 32px 30px 0px 16px;
+    justify-content: space-between;
+  }
+
+  .top-sidebar h3 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0px;
+  }
+
+  .menu a {
+    margin-left: 0px;
+  }
+  .top-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-sidebar img {
+    max-width: 50%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar li {
+    padding-top: 16px;
+  }
+
+  .navbar a {
+    margin-left: 0;
+  }
+
+  .overlay-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+
+  .overlay-bg.navbar-active {
+    display: block;
+  }
+
+  .hero-section {
+    padding-top: 80px;
+  }
+
+  .hero-content {
+    padding-left: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    text-align: justify;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+}
